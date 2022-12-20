@@ -19,18 +19,19 @@ from .views import *
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from . import views
 # from django.conf.urls import url
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('signgup/', SignUpView.as_view(),name="signup"),
-    #path('', index),
-    #path('index', index),
-    #path('nosotros', nosotros),
-    path("", NoticiaListview.as_view()),
-    # url(r'^$', LoginView.as_view(), name= 'login'),
+    path('accounts/', include('django.contrib.auth.urls')), 
+    path('signup/', SignUpView.as_view(),name='signup'),
+    path("", NoticiaListview.as_view(),name='index'),
+    path("crearNoticia/", NoticiaCreateView.as_view(),name='crear_noticia'),
+    path("login/", views.login_view),
     # url(r'^logout$', LogoutView.as_view(), name= 'logout'),
+    path ("<slug:pk>/detail/", NoticiaDetailView.as_view(),name='detail'),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()

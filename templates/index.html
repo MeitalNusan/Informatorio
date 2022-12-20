@@ -16,11 +16,12 @@
                     <FONT COLOR="white"><h5>"Somos un proyecto interdisciplinario de impacto social que fue fundado en el año 2016. Tiene como objetivo apoyar a las mujeres que estan siendo vulneradas para poder acompañarlas, otorgandoles herramientas para que puedan elevar su nivel de vida."</h5></FONT><br>
                     <div class="d-flex justify-content-center justify-content-lg-start">
                         <center><a href="#about" class="btn-get-started scrollto">Conocé mas acerca de nosotras</a></center>
-                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Reproducir video institucional</span></a>
+                        <a href="https://www.instagram.com/p/ClofdJqpb7Q/" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Conocenos a traves de nuestro video institucional</span></a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+                    {% comment %} <img src="assets/img/default.png" class="img-fluid animated" alt=""> {% endcomment %}
+                    <div class="pic"><img src="static/assets/img/default.png" class="img-fluid" alt=""></div>
                 </div>
             </div>
         </div>
@@ -50,7 +51,7 @@
           <p>
             "Una mujer fuerte toma decisiones desde un lugar de autoridad, de poder, y no desde la debilidad."
           </p>
-          <a href="#" class="btn-learn-more">Leer mas</a>
+          <a href="#team" class="btn-learn-more">Leer mas</a>
         </div>
       </div>
 
@@ -68,7 +69,7 @@
               <p> Enterate que es lo que hacemos</p>
             </div>
             <div class="col-lg-3 cta-btn-container text-center">
-              <a class="cta-btn align-middle" href="noticias">Ver noticias</a>
+              <a class="cta-btn align-middle" href="#services">Ver noticias</a>
             </div>
           </div>
   
@@ -96,8 +97,9 @@
                     {% endif %}
                     <div class="icon"><i class=""></i></div>
                     <h6><a href="">{{n.publicado}}</a></h6>
+                    <h6><a href="">{{n.Categoria}}</a></h6>
                     <p>{{n.texto}}</p>
-                      <a class='cta-btn align-middle' href="#"><br>Deja aquí tu comentario</a>
+                      <a class='cta-btn align-middle' href="{% url "detail" n.pk %}"><br>Deja aquí tu comentario</a>
             </div>
         {% endfor %}
     </div>
