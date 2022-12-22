@@ -36,7 +36,6 @@ Pygments==2.13.0
 PyMySQL==1.0.2
 pyparsing==3.0.9
 python-dateutil==2.8.2
-pywin32==305
 pyzmq==24.0.1
 six==1.16.0
 sqlparse==0.4.3
@@ -47,3 +46,4 @@ traitlets==5.5.0
 tzdata==2022.6
 virtualenv==20.17.0
 wcwidth==0.2.5
+pywin32==305
