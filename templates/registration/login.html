@@ -1,6 +1,17 @@
 {% load crispy_forms_tags %}
-
+<head>
+    <title> {% block title %} Fundación Entre Nosotras {% endblock title %} </title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  
+  </head>
 {% block content %}
+
 
 <div class="row">
     <div class="col-12 col-md-4 offset-md-4">
@@ -16,11 +27,11 @@
                     {{ form | crispy }}
                     <br>
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-pimary">Ingresar</button>
+                        <button type="submit" style="background-color: lightblue"class="btn btn-pimary">Ingresar</button>
                     </div>
                     <br>
                     <div class="d-flex justify-content-center">
-                        <label for="signup">No tiene una cuenta?</label>
+                        <label for="signup">Aún no se encuentra registrado?</label>
                     </div>
                     <div class="d-flex justify-content-center">
                         <a href="{% url 'signup' %}">Registrarse aquí</a>
@@ -34,3 +45,4 @@
 </div>
 
 {% endblock content %}
+ 
